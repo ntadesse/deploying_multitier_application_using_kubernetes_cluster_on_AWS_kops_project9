@@ -1,0 +1,7 @@
+- aws ec2 create-volume --availablity-zone=s-east-2a -size=3 --volume-type=gp2
+# take a note <volumeID>
+- kubctl get nodes --show-labels
+- kubctl get nodes
+- kubctl get nodes ip <node name> | grep <us-east-2>
+- kubctl lable nodes <node1 name> zone=us-east-2a 
+- kubctl lable nodes <node2 name> zone=us-east-2b

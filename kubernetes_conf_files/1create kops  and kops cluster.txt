@@ -1,0 +1,34 @@
+- ssh -i <Downloads/kops-key.pem> <ec2user>@<ip-address>
+- ssh-keygen  --- generate ssh key for the kops
+- apt update && apt install awscli
+- aws configure
+   AWS Access Key ID:
+   AWS Secret Access Key ID:
+   Defualt Region name
+   Default output: 
+- curl -LO "https://dl.k8s.io/release/$(curl -L -s   https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+- chmod +x ./kubectl
+- mv kubectl /usr/local/bin
+- kubectl  [to install kubectl]
+- kubectl version 
+- wget https://github.com/kubernetes/kops/releases/download/v1.26.4/kops-linux-amd64 [link from github https://github.com/kubernetes/kops/releases/]
+- chmod +x kops-linux-amd64
+- mv kops-linux-amd64 /usr/local/bin/kops
+- kops
+- kops version
+- nslookup -type=ns "domain name [kubevpro.groophy.in]" [to verify domain]
+- kops create cluster --name=kubevpro.groophy.in \ 
+> --state=s3://vprofile-kop-states --zones=us-east-2a,us-east-2b \ 
+> --node-count=2 --node-size=t3.small --master-size=t3.medium --dns-zone=kubevpro.groophy.in \ 
+> --node-volume-size=8 --master-volume-size=8
+
+- kops update cluster --name kubevpro.groophy.in --state=s3://vprofile-kop-states --yes --admin
+- kops validate cluster --name kubevpro.groophy.in --state=s3://vprofile-kop-states --yes --admin
+- kops delete cluster --name kubevpro.groophy.in --state=s3://vprofile-kop-states --yes --admin
+- cat ~/.kube/config [a file by kops for kubectl command]
+- kubectl get nodes
+
+
+- kops create cluster & kops update cluster [ to intaiate kops that are created after poweroff or restart the vm]
+
+

@@ -1,0 +1,12 @@
+
+# git clone <https://github.com/ntadesse/kube-app.git> # definition file collection
+# cd /kube-app
+# kubectl create/apply -f . # the. indicate all definition files on the directory
+# kubectl get secret
+# kubectl describe secret
+# kubectl get deploy
+# kubectl get pod
+# kubectl get svc
+
+
+# kubectl delete -f .
