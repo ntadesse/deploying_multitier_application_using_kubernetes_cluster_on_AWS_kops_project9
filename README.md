@@ -4,7 +4,13 @@
 - MySQL 5.6 or later
 
 ## Technologies 
-- Java Multitier Webapplication
+- Spring MVC
+- Spring Security
+- Spring Data JPA
+- Maven
+- JSP
+- MySQL
+## Tools
 - Kubernetes
 - Docker
 - Domain Registrar (Godaddy/Cloudflare)
